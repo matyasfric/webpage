@@ -1,10 +1,11 @@
+/* Styly pro body prvku v HTML souboru */
 body {
     margin: 0;
     background: pink;
     text-align: center;
 }
 
-/* styles.css */
+/* Styly pro uhýbací text */
 .bending-text {
     transition: transform 0.3s ease-in-out; /* Plynulá změna vlastnosti transform */
 }
