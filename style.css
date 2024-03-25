@@ -12,3 +12,13 @@ body {
 .bending-text:hover {
     transform: translateY(10px); /* Posunutí textu o 10px dolů při najetí kurzorem */
 }
+
+/* Styly pro rotující text */
+.rotating-text {
+    display: inline-block;
+    animation: rotate 5s linear infinite; /* Rotace každých 5 sekund */
+}
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
