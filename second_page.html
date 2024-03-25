@@ -4,9 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Druhá stránka</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Styly pro rotující obrázek */
+        .rotating-image {
+            display: block;
+            margin: 0 auto;
+            width: 200px; /* Nastavte šířku obrázku podle potřeby */
+            animation: rotate 5s linear infinite; /* Rotace každých 5 sekund */
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
 </head>
 <body>
     <h1>Druhá stránka</h1>
     <p><a href="index.html">Zpět na hlavní stránku</a></p>
+    <img src="Marian.JPG" alt="Marian" class="rotating-image">
 </body>
 </html>
