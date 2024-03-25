@@ -3,6 +3,7 @@ body {
     margin: 0;
     background: pink;
     text-align: center;
+    overflow: hidden; /* Schovává obsah, který přesahuje rozměry okna prohlížeče */
 }
 
 /* Styly pro container */
@@ -15,22 +16,14 @@ body {
 }
 
 /* Styly pro uhýbací text */
-.hover-container {
-    position: relative;
-    display: inline-block;
-}
-
 .bending-text {
-    position: relative;
+    position: absolute;
     transition: transform 0.3s ease-in-out; /* Plynulý přechod transformace */
+    cursor: pointer; /* Ukazatel myši při najetí na text */
 }
 
-.hover-container:hover .bending-text {
-    transform: translate(100px, 100px); /* Posunutí textu na souřadnice (100px, 100px) */
-}
-
-/* Styly pro plameny */
-.flames {
+/* Styly pro kontejner plamenů */
+.flames-container {
     position: fixed;
     top: 0;
     left: 0;
@@ -40,6 +33,7 @@ body {
     z-index: -1; /* Plameny jsou pod obsahem */
 }
 
+/* Styly pro plameny */
 .flame {
     position: absolute;
     width: 20px;
@@ -66,4 +60,17 @@ body {
     50% {
         transform: scale(0.9);
     }
+}
+
+/* Dodatečné styly pro umístění plamenů */
+.flame:nth-child(1) {
+    left: 10%;
+}
+
+.flame:nth-child(2) {
+    left: 30%;
+}
+
+.flame:nth-child(3) {
+    left: 50%;
 }

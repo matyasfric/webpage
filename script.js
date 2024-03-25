@@ -1,18 +1,13 @@
-// Vybrání elementu textu
-const bendingText = document.querySelector('.bending-text');
-
-// Funkce pro přemístění textu na novou pozici
+// Funkce pro náhodnou změnu pozice textu
 function moveText() {
-    bendingText.style.transform = 'translate(100px, 100px)'; // Posunutí textu na souřadnice (100px, 100px)
+    const text = document.getElementById('bendingText');
+    const maxX = window.innerWidth - text.clientWidth;
+    const maxY = window.innerHeight - text.clientHeight;
+    const newX = Math.random() * maxX;
+    const newY = Math.random() * maxY;
+    text.style.left = `${newX}px`;
+    text.style.top = `${newY}px`;
 }
 
-// Funkce pro vrácení textu na původní pozici
-function resetText() {
-    bendingText.style.transform = 'none'; // Vrácení textu na původní pozici
-}
-
-// Přidání události pro vstup myši nad text
-bendingText.addEventListener('mouseenter', moveText);
-
-// Přidání události pro odchod myši z textu
-bendingText.addEventListener('mouseleave', resetText);
+// Přidání události pro pohyb myši nad textem
+document.getElementById('bendingText').addEventListener('mouseenter', moveText);
