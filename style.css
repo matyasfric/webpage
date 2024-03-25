@@ -5,13 +5,34 @@ body {
     text-align: center;
 }
 
-/* Styly pro uhýbací text */
-.bending-text {
-    transition: transform 0.3s ease-in-out; /* Plynulá změna vlastnosti transform */
+ /* Styly pro uhýbací text */
+ .bending-text {
+    position: relative;
 }
-.bending-text:hover {
-    transform: translateY(100px); /* Posunutí textu o 10px dolů při najetí kurzorem */
+
+.bending-text.hover {
+    animation: move 2s linear infinite alternate; /* Animace trvá 5 sekund, lineární přechod, opakuje se nekonečně a střídá směry */
 }
+
+@keyframes move {
+    0%, 100% { 
+        /* Výchozí pozice */
+        transform: translate(0, 0);
+    }
+    25% {
+        /* Pohyb vpravo */
+        transform: translate(20px, 0);
+    }
+    50% {
+        /* Pohyb dolů */
+        transform: translate(0, 20px);
+    }
+    75% {
+        /* Pohyb vlevo */
+        transform: translate(-20px, 0);
+    }
+}
+
 
 /* Styly pro rotující text */
 .rotating-text {
