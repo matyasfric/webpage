@@ -5,6 +5,15 @@ body {
     text-align: center;
 }
 
+/* Styly pro container */
+.container {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 /* Styly pro uhýbací text */
 .bending-text {
     position: relative;
@@ -31,17 +40,6 @@ body {
         /* Pohyb vlevo */
         transform: translate(-50px, 0);
     }
-}
-
-/* Styly pro rotující text */
-.rotating-text {
-    display: inline-block;
-    animation: rotate 5s linear infinite; /* Rotace každých 5 sekund */
-}
-
-@keyframes rotate {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
 }
 
 /* Styly pro plameny */

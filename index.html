@@ -3,39 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rotující odstavec</title>
-    <link rel= "stylesheet" href="style.css">
+    <title>Uhybající text s plameny</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Hello World</h1> 
-    <p>Hello World</p>
-    <p class="rotating-text">Toto je druhý odstavec.</p>
-    <p class="bending-text">Nechytitelný text</p>
-
-    <script>
-        // Vybrání elementu textu
-        const bendingText = document.querySelector('.bending-text');
-
-        // Přidání události pro vstup myši nad text
-        bendingText.addEventListener('mouseenter', function() {
-            // Přidání třídy pro spuštění animace
-            this.classList.add('hover');
-        });
-
-        // Přidání události pro odchod myši z textu
-        bendingText.addEventListener('mouseleave', function() {
-            // Odebrání třídy pro zastavení animace
-            this.classList.remove('hover');
-        });
-
-        <!-- Plameny -->
-    <div class="flames">
-        <div class="flame" style="left: 10%;"></div>
-        <div class="flame" style="left: 20%;"></div>
-        <div class="flame" style="left: 30%;"></div>
+    <div class="container">
+        <p class="bending-text">Nechytitelný text</p>
     </div>
-
-    </script></body>
-
+    <div class="flames">
+        <div class="flame"></div>
+        <div class="flame"></div>
+        <div class="flame"></div>
+        <!-- Přidejte další plameny podle potřeby -->
+    </div>
 </body>
 </html>
