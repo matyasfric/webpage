@@ -15,31 +15,18 @@ body {
 }
 
 /* Styly pro uhýbací text */
+.hover-container {
+    position: relative;
+    display: inline-block;
+}
+
 .bending-text {
     position: relative;
+    transition: transform 0.3s ease-in-out; /* Plynulý přechod transformace */
 }
 
-.bending-text.hover {
-    animation: move 1s linear infinite alternate; /* Animace trvá 1 sekundu, lineární přechod, opakuje se nekonečně a střídá směry */
-}
-
-@keyframes move {
-    0%, 100% { 
-        /* Výchozí pozice */
-        transform: translate(0, 0);
-    }
-    25% {
-        /* Pohyb vpravo */
-        transform: translate(50px, 0);
-    }
-    50% {
-        /* Pohyb dolů */
-        transform: translate(0, 50px);
-    }
-    75% {
-        /* Pohyb vlevo */
-        transform: translate(-50px, 0);
-    }
+.hover-container:hover .bending-text {
+    transform: translate(100px, 100px); /* Posunutí textu na souřadnice (100px, 100px) */
 }
 
 /* Styly pro plameny */
