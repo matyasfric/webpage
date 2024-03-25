@@ -3,3 +3,11 @@ body {
     background: pink;
     text-align: center;
 }
+
+/* styles.css */
+.bending-text {
+    transition: transform 0.3s ease-in-out; /* Plynulá změna vlastnosti transform */
+}
+.bending-text:hover {
+    transform: translateY(10px); /* Posunutí textu o 10px dolů při najetí kurzorem */
+}

@@ -5,34 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rotující odstavec</title>
     <link rel= "stylesheet" href="style.css">
-    <style>
-        /* CSS pro rotující animaci */
-        @keyframes rotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        .rotating-paragraph {
-            display: inline-block;
-            animation: rotate 5s linear infinite; /* Rotace každých 5 sekund */
-
-             /* Základní styly pro odstavec */
-        .fleeing-paragraph {
-            padding: 20px;
-            background-color: #f0f0f0;
-            transition: transform 0.3s ease; /* Plynulý přechod transformace */
-        }
-
-        /* Transformace pro odstavec při najetí kurzoru */
-        .fleeing-paragraph:hover {
-            transform: translateX(20px); /* Odstavec se posune vpravo o 20px */
-        }
-    </style>
 </head>
 <body>
     <h1>Hello World</h1> 
     <p>Hello World</p>
     <p class="rotating-paragraph">Toto je druhý odstavec.</p>
-    <p class="fleeing-paragraph">Najeďte na tento odstavec kurzorem myši.</p>
+    <p class="bending-text">Text, na který se při najetí kurzorem automaticky uhne.</p>
+
 
 </body>
 </html>
