@@ -10,32 +10,45 @@ function moveText() {
         };
     }
 
-    // Funkce pro aktualizaci rozměrů textu a maximálních hodnot
-    function updateTextSizeAndMax() {
-        const windowSize = getWindowSize();
-        const margin = 10; // Margin od okrajů
-        const maxX = windowSize.width - text.clientWidth - margin;
-        const maxY = windowSize.height - text.clientHeight - margin;
-        return { maxX, maxY };
+    // Funkce pro získání rozměrů textu
+    function getTextSize() {
+        const style = window.getComputedStyle(text);
+        return {
+            width: parseFloat(style.width),
+            height: parseFloat(style.height)
+        };
     }
 
-    // Při prvním spuštění a při změně velikosti okna aktualizujeme rozměry textu a maximální hodnoty
-    let { maxX, maxY } = updateTextSizeAndMax();
-    window.addEventListener('resize', () => {
-        ({ maxX, maxY } = updateTextSizeAndMax());
-    });
+    // Funkce pro získání náhodné pozice uvnitř okna
+    function getRandomPosition() {
+        const windowSize = getWindowSize();
+        const textSize = getTextSize();
+        const margin = 50; // Margin od okrajů
+        const maxX = windowSize.width - textSize.width - margin;
+        const maxY = windowSize.height - textSize.height - margin;
+        const newX = Math.max(margin, Math.random() * maxX);
+        const newY = Math.max(margin, Math.random() * maxY);
+        return { x: newX, y: newY };
+    }
 
-    // Nová pozice textu
-    let newX = Math.random() * maxX;
-    let newY = Math.random() * maxY;
+    // Nastavení pozice textu uvnitř okna
+    function setPosition() {
+        const { x, y } = getRandomPosition();
+        text.style.left = `${x}px`;
+        text.style.top = `${y}px`;
+    }
 
-    // Zajištění, aby nová pozice textu zůstala uvnitř okna prohlížeče
-    newX = Math.max(0, newX);
-    newY = Math.max(0, newY);
+    // Nastavit počáteční pozici
+    setPosition();
 
-    text.style.left = `${newX}px`;
-    text.style.top = `${newY}px`;
+    // Při změně velikosti okna zajistit, aby text zůstal uvnitř okna
+    window.addEventListener('resize', setPosition);
 }
+
+// Spustit funkci při načtení stránky
+moveText();
+
+
 
 
 
