@@ -13,8 +13,9 @@ function moveText() {
     // Funkce pro aktualizaci rozměrů textu a maximálních hodnot
     function updateTextSizeAndMax() {
         const windowSize = getWindowSize();
-        const maxX = windowSize.width - text.clientWidth;
-        const maxY = windowSize.height - text.clientHeight;
+        const margin = 10; // Margin od okrajů
+        const maxX = windowSize.width - text.clientWidth - margin;
+        const maxY = windowSize.height - text.clientHeight - margin;
         return { maxX, maxY };
     }
 
@@ -29,12 +30,13 @@ function moveText() {
     let newY = Math.random() * maxY;
 
     // Zajištění, aby nová pozice textu zůstala uvnitř okna prohlížeče
-    newX = Math.max(0, Math.min(newX, maxX));
-    newY = Math.max(0, Math.min(newY, maxY));
+    newX = Math.max(0, newX);
+    newY = Math.max(0, newY);
 
     text.style.left = `${newX}px`;
     text.style.top = `${newY}px`;
 }
+
 
 
 
