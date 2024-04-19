@@ -28,17 +28,16 @@ function moveText() {
     let newX = Math.random() * maxX;
     let newY = Math.random() * maxY;
 
-    // Kontrola, zda nová pozice nepřesahuje okno prohlížeče
-    if (newX < 0) {
-        newX = 0;
-    }
-    if (newY < 0) {
-        newY = 0;
-    }
+    // Zajištění, aby nová pozice textu zůstala uvnitř okna prohlížeče
+    newX = Math.max(0, Math.min(newX, maxX));
+    newY = Math.max(0, Math.min(newY, maxY));
 
     text.style.left = `${newX}px`;
     text.style.top = `${newY}px`;
 }
+
+
+
 
 
 
