@@ -38,7 +38,7 @@ function moveText() {
         text.style.top = `${y}px`;
     }
 
-    // Nastavit počáteční pozici
+    // Nastavit počáteční pozici při prvním načtení stránky
     setPosition();
 
     // Při změně velikosti okna zajistit, aby text zůstal uvnitř okna
